@@ -1,0 +1,42 @@
+﻿@model QQQ.Mvc5WebUI.Models.NavButtonModel
+
+<ul class="nav navbar-nav">
+    <li>@Html.ActionLink("Home", "Index", "Home", new { id = 0 }, new { @class = "navbar-brand" })</li>
+    <li>@Html.ActionLink("C#", "Index", "Home", new { id = 1 }, null)</li>
+	<li>@Html.ActionLink(".NET Core", "Index", "Home", new { id = 4 }, null)</li>
+    <li>@Html.ActionLink("MVC", "Index", "Home", new { id = 3 }, null)</li>
+	<li>@Html.ActionLink("Web API", "Index", "Home", new { id = 1013 }, null)</li>
+	<li>@Html.ActionLink("SOLID", "Index", "Home", new { id = 8 }, null)</li>
+    <li>@Html.ActionLink("SQL Server", "Index", "Home", new { id = 5 }, null)</li>
+    <li>@Html.ActionLink("Angular", "Index", "Home", new { id = 2016 }, null)</li>
+	<li>@Html.ActionLink("TypeScript", "Index", "Home", new { id = 15 }, null)</li>
+    <li>@Html.ActionLink("DOC", "Index", "Document", new { id = 0 }, null)</li>
+	<li>@Html.ActionLink("Create New", "Create", "Home")</li>
+</ul>
+<!-- Single button -->
+    @Html.ActionLink("INTERVIEW", "Index", "InterView", new { id = 9 }, new { @class="btn btn-warning" })
+    @Html.ActionLink("Vendors", "Index", "Contract", new { id = 9 }, new { @class="btn btn-primary" })
+
+<div style="margin: 10px" class="btn-group">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        Category <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+
+        @foreach (var item in Model.Categories)
+        {
+            
+            <li>@Html.ActionLink(@item.Name, "Index", "Home", new { id = item.Id }, null)</li>
+        }
+    </ul>
+</div>
+
+<div style="margin: 10px" class="btn-group">
+    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        Tables <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+       <li>@Html.ActionLink("Category", "Index", "Category")</li>
+       <li>@Html.ActionLink("Level", "Index", "Level")</li>
+    </ul>
+</div>

@@ -1,0 +1,48 @@
+﻿@model QQQ.Model.Document
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <title>Details</title>
+</head>
+<body>
+  
+    <div style="margin:10px">
+        <h3>
+        <span class="label label-primary">@Html.LabelForModel(Model.Title)</span>
+        <span class="label label-default">@Html.LabelForModel(Model.CreateDate.ToShortDateString())</span>
+        <span class="label label-danger">@Html.LabelForModel(Model.Priority.ToString())</span>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+
+    </h3>
+
+        <code>@Html.LabelForModel("Description: " + Model.Description.ToString())</code>    
+        <hr />
+
+        <div class="jumbotron">
+            @Html.Raw(Model.Contents)
+        </div>
+
+    
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
